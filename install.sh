@@ -1,16 +1,31 @@
 #!/bin/bash
 
-echo "=== UtecCompiler Installer ==="
+echo "=== 🚀 UtecCompiler Auto-Build Installer ==="
 
-# Agrega el repo a sources.list.d
-echo "deb [trusted=yes] https://luisenriquecortijogonzales.github.io/uteccompiler-repo stable main" | sudo tee /etc/apt/sources.list.d/uteccompiler.list
+# 1️⃣ Crea carpeta temporal
+WORKDIR="$HOME/uteccompiler-build"
+mkdir -p "$WORKDIR"
+cd "$WORKDIR"
 
-# Actualiza índices
-echo "=== Updating package lists..."
-sudo apt update
+# 2️⃣ Clona tu repo de código fuente
+echo "=== ⏬ Cloning source code..."
+git clone https://github.com/LuisEnriqueCortijoGonzales/uteccompiler-repo-source.git .
 
-# Instala el compilador
-echo "=== Installing uteccompiler..."
-sudo apt install -y uteccompiler
+# 3️⃣ Compila UtecC y UtecCop
+echo "=== ⚙️ Compiling UtecC..."
+g++ main.cpp parser.cpp scanner.cpp token.cpp visitor.cpp exp.cpp -o UtecC
 
-echo "✅ funciono."
+echo "=== ⚙️ Compiling UtecCop..."
+g++ main.cpp parser.cpp scanner.cpp token.cpp visitor.cpp exp.cpp -o UtecCop
+
+# 4️⃣ Instala en /usr/local/bin (requiere sudo)
+echo "=== 📦 Installing executables..."
+sudo mv UtecC /usr/local/bin/
+sudo mv UtecCop /usr/local/bin/
+
+# 5️⃣ Limpia
+echo "=== 🧹 Cleaning up..."
+cd ~
+rm -rf "$WORKDIR"
+
+echo "✅ Done! You can now use UtecC and UtecCop globally."
