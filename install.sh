@@ -13,4 +13,4 @@ sudo apt update
 echo "=== Installing uteccompiler..."
 sudo apt install -y uteccompiler
 
-echo "✅ Done! You can now run UtecC and UtecCop from the terminal."
+echo "✅ funciono."
