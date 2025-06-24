@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "=== 🚀 UtecCompiler Auto-Build Installer ==="
+echo "=== 🚀 UtecCompiler Auto-Build Installer by Luis and ChatGPT ==="
 
 # 1️⃣ Crea carpeta temporal
 WORKDIR="$HOME/uteccompiler-build"
@@ -28,4 +28,4 @@ echo "=== 🧹 Cleaning up..."
 cd ~
 rm -rf "$WORKDIR"
 
-echo "✅ Done! You can now use UtecC and UtecCop globally."
+echo "✅ Done!"
