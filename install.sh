@@ -2,6 +2,11 @@
 
 echo "=== 🚀 UtecCompiler Auto-Build Installer by Luis and ChatGPT ==="
 
+# 0️⃣ Asegura dependencias (git, g++)
+echo "=== 🧰 Installing dependencies (requires sudo)..."
+sudo apt update
+sudo apt install -y g++ git
+
 # 1️⃣ Crea carpeta temporal
 WORKDIR="$HOME/uteccompiler-build"
 mkdir -p "$WORKDIR"
@@ -18,8 +23,8 @@ g++ main.cpp parser.cpp scanner.cpp token.cpp visitor.cpp exp.cpp -o UtecC
 echo "=== ⚙️ Compiling UtecCop..."
 g++ main.cpp parser.cpp scanner.cpp token.cpp visitor.cpp exp.cpp -o UtecCop
 
-# 4️⃣ Instala en /usr/local/bin (requiere sudo)
-echo "=== 📦 Installing executables..."
+# 4️⃣ Instala en /usr/local/bin
+echo "=== 📦 Installing executables (requires sudo)..."
 sudo mv UtecC /usr/local/bin/
 sudo mv UtecCop /usr/local/bin/
 
