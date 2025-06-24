@@ -1,0 +1,13 @@
+Package: uteccompiler
+Version: 1.0
+Architecture: amd64
+Maintainer: Luis <luis.cortijo@utec.edu.pe>
+Filename: pool/main/uteccompiler_1.0.deb
+Size: 43354
+MD5sum: 3cabcec383a2b8a48bee998fd205fc20
+SHA1: 1a503066a31df36a73465f2f10f42e1e7321a566
+SHA256: 356a72bc8426bb5e1c67375eb71fb00618d3e469e0953a2022f4039e3512aaeb
+Section: base
+Priority: optional
+Description: UtecC y UtecCop compiladores de UTEC.
+
